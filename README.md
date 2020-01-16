@@ -9,7 +9,8 @@ I based this template from information available on the websites:
 - https://www.liquidweb.com/kb/protecting-against-cve-2016-0728/
 - https://docs.bitnami.com/virtual-machine/security/security-2016-01-20/
 
-To the things work well, you must set the user parameter in the zabbix agent configuration file of the operating system you want to test. The parameter must be set as follows:
+There are two triggers, the first will inform yhat "There is a risk that this kernel version is vulnerable to CVE-2016-0728" and the second: CVE-2016-0728 Vulnerability not patched. The precision only depends if you define or not the user parameter.
+To the things work more precise, you must set the user parameter in the zabbix agent configuration file of the operating system you want to test. The parameter must be set as follows:
 
 UserParameter = cve-2016-0728, rpm -qa --changelog kernel | grep CVE-2016-0728
 
