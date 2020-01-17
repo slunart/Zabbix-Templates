@@ -2,4 +2,5 @@
 Zabbix Templates
 
 Please read: 
-1. README-Zabbix-CVE-2016-0728.md for CVE-2016-0728 Zabbix Template
+1. CVE-2016-0728: README-Zabbix-CVE-2016-0728.md
+2. CMCIII-RITTAL: README-CMCIII-Rittal-Zabbix.md
