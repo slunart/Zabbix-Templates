@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.0</version>
+    <date>2020-11-27T16:13:18Z</date>
+    <groups>
+        <group>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template Windows License Status</template>
+            <name>Template Windows License Status</name>
+            <description>To work properly, you need to set the User Parameter inside the &quot;zabbix_agentd.conf&quot; or into &quot;zabbix_agentd.userparams.conf&quot; as below:&#13;
+&#13;
+UserParameter=WinVerAct,powershell -noninteractive -Command &quot;$WinVerAct=[string](cscript /Nologo \&quot;C:\Windows\System32\slmgr.vbs\&quot; /xpr) -join ''; $Res1=$WinVerAct.Contains('A máquina está ativada permanentemente.'); $Res2=$WinVerAct.Contains('The machine is permanently activated.'); $Res1 -Or $res2&quot;&#13;
+&#13;
+The period of the item is defined in the interval of 1 day. Change it to a value that suits your needs&#13;
+&#13;
+Created by Samuel Martins&#13;
+https://github.com/slunart</description>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>Windows License</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>The machine is permanently activated</name>
+                    <key>WinVerAct</key>
+                    <delay>1d</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <applications>
+                        <application>
+                            <name>Windows License</name>
+                        </application>
+                    </applications>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=&quot;False&quot;</expression>
+                            <name>Windows License is not Activated</name>
+                            <priority>WARNING</priority>
+                            <manual_close>YES</manual_close>
+                        </trigger>
+                    </triggers>
+                </item>
+            </items>
+        </template>
+    </templates>
+</zabbix_export>
