@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2020-11-27T16:13:18Z</date>
+    <date>2020-11-27T16:34:09Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -44,7 +44,7 @@ https://github.com/slunart</description>
                     <triggers>
                         <trigger>
                             <expression>{last()}=&quot;False&quot;</expression>
-                            <name>Windows License is not Activated</name>
+                            <name>Windows License is not Permanently activated</name>
                             <priority>WARNING</priority>
                             <manual_close>YES</manual_close>
                         </trigger>
