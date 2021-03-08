@@ -19,6 +19,6 @@ Total of:
 
 Based on Furukawa user guide - NT-GPONREV00 – March2019
 
- 
+https://share.zabbix.com/network_devices/template-snmp-furukawa-olt-onu 
 
 Bye!
